@@ -1,0 +1,24 @@
+jobs:
+  include:
+  - language: java
+    jdk: oraclejdk10
+
+    git:
+      depth: false
+
+    addons:
+      sonarcloud:
+        organization: chrootlogin-github
+        token:
+          secure: DPuHr3ZrsJ6meG4ipnUsQICOkQHpbg/eISRnEksiugeYgT6MofxZElPgngVSZytWDXQvuQUJfzcKgg3kRzQAbaB3HdsYcpKM1VRVSPTF/tGXVL0zT75YpaaH8Fyn78WblHwqtb36TFdHFJvXu1DrlvcZl1YMuVMzHSlxgBdJWR/G4IDZWB1uLyf0RxJJPs1bKtNinE6WIKQEa2lcAcgtT5FAvH0tK2mDLQSb6DSZraW2RAnk1X5e7niCYPvL+/Ar3fX477jm1pan0OKGFGgxxDNqou86Nc5VZDdKoIdDbjfuOjOeSWoFiNmhbUkiCIkzEHro6Z5Zq5QQ3nu3qpRSybV/D85TZolRd6LJiCxKQVlneMYEpMcrhYGexiQudKyn2FChzvjXRTqfh9tsWtCx1PgEbFqR6NllWvHBpahzvIywoAfthPYEjp9jurDdujDYpa9xbKVxs5ehFg9ODgAOKxy6X0J0mBdHxaME4VLf824vh12ocxc21K2ofGYJQUMHWtblBxCiXrxg2bi1g0Ee+dbmoxkrm0jXgRnYnhnsURKya3d+D1e/R7Dtw5JYTjSw3FNaJDZEahAa7WmEYabgfc9szprj9IiabXbI+WhkWzz4+pG2P6wpT5IsBsZ/UyhMF2XO3M2Hqz5tf56eHKD7eIlZk99dMItCLdBJQQvC0vs=
+
+    install:
+    - mvn install
+
+    script:
+    - sonar-scanner
+    - mvn clean verify
+
+notifications:
+  email:
+  - hello@rootlogin.ch

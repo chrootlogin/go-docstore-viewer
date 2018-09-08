@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<GridPane alignment="CENTER"
+          xmlns="http://javafx.com/javafx/10.0.2"
+          xmlns:fx="http://javafx.com/fxml/1"
+          fx:controller="ch.rootlogin.godocstore.viewer.controllers.MainViewController"
+          GridPane.hgrow="ALWAYS"
+          GridPane.vgrow="ALWAYS"
+          prefWidth="800">
+    <MenuBar GridPane.columnIndex="0" GridPane.hgrow="ALWAYS">
+        <Menu text="Documents">
+            <MenuItem text="Create" />
+        </Menu>
+    </MenuBar>
+
+   <columnConstraints>
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+      <RowConstraints />
+   </rowConstraints>
+</GridPane>

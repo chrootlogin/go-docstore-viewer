@@ -1,0 +1,7 @@
+.align-right {
+    -fx-alignment: CENTER-RIGHT;
+}
+
+.title {
+    -fx-font-size: 24;
+}
