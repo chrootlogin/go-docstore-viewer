@@ -12,10 +12,12 @@
         <maven.compiler.source>10</maven.compiler.source>
         <maven.compiler.target>10</maven.compiler.target>
         <log4j.version>2.11.1</log4j.version>
+        <sonar.projectKey>chrootlogin_go-docstore-viewer</sonar.projectKey>
     </properties>
 
     <scm>
-        <connection>scm:git:ssh://git@github.com/chrootlogin/go-docstore-viewer.git</connection>
+        <connection>scm:git:git@github.com:chrootlogin/go-docstore-viewer.git</connection>
+        <developerConnection>scm:git:git@github.com:chrootlogin/go-docstore-viewer.git</developerConnection>
         <url>https://github.com/chrootlogin/go-docstore-viewer</url>
         <tag>HEAD</tag>
     </scm>
