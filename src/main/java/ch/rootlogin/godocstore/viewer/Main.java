@@ -40,7 +40,7 @@ public class Main extends Application {
 
             primaryStage.show();
         } catch(IOException e) {
-            logger.log(Level.SEVERE, "Cannot start GUI: " + e.getMessage());
+            logger.log(Level.SEVERE, "Cannot start GUI: ", e);
             System.exit(255);
         }
     }
