@@ -6,18 +6,22 @@ jobs:
     git:
       depth: false
 
+    cache:
+      directories:
+      - '$HOME/.m2/repository'
+      - '$HOME/.sonar/cache'
+
     addons:
       sonarcloud:
         organization: chrootlogin-github
         token:
-          secure: DPuHr3ZrsJ6meG4ipnUsQICOkQHpbg/eISRnEksiugeYgT6MofxZElPgngVSZytWDXQvuQUJfzcKgg3kRzQAbaB3HdsYcpKM1VRVSPTF/tGXVL0zT75YpaaH8Fyn78WblHwqtb36TFdHFJvXu1DrlvcZl1YMuVMzHSlxgBdJWR/G4IDZWB1uLyf0RxJJPs1bKtNinE6WIKQEa2lcAcgtT5FAvH0tK2mDLQSb6DSZraW2RAnk1X5e7niCYPvL+/Ar3fX477jm1pan0OKGFGgxxDNqou86Nc5VZDdKoIdDbjfuOjOeSWoFiNmhbUkiCIkzEHro6Z5Zq5QQ3nu3qpRSybV/D85TZolRd6LJiCxKQVlneMYEpMcrhYGexiQudKyn2FChzvjXRTqfh9tsWtCx1PgEbFqR6NllWvHBpahzvIywoAfthPYEjp9jurDdujDYpa9xbKVxs5ehFg9ODgAOKxy6X0J0mBdHxaME4VLf824vh12ocxc21K2ofGYJQUMHWtblBxCiXrxg2bi1g0Ee+dbmoxkrm0jXgRnYnhnsURKya3d+D1e/R7Dtw5JYTjSw3FNaJDZEahAa7WmEYabgfc9szprj9IiabXbI+WhkWzz4+pG2P6wpT5IsBsZ/UyhMF2XO3M2Hqz5tf56eHKD7eIlZk99dMItCLdBJQQvC0vs=
+          secure: ytU3nQd7/LmB8K0SrJ6JmnB4k9d6rIy4UUr7Qc6S+dHK9a8thEKp5YbSbijBglH1LFfyFckm9KIeGhLisvqDur2TWo8jEMAmWTjdN/KiDAoZIBmvTpW3hTnkk7g9+kYwb5QL27Qbccl4XUgjhUaoOtTqOijGf3SGf737zdazOQUN8UFC/aiyUVicPLlsBpbROH0bzXc+GA0Ygmkfcd2etyU1+w9gRHLUQlcKiMcIbOHKkHnaHr0uNCoNCG3gCff4fcAHY5BFZr+jF/YN2oTLBRa9o4zyN3/K/5jQUASQo8FRnyeH0EqS+bLrYJqbb4NBeYb//FlRQHTspNyBBRHUaxssDOpJM6oeK/qI8sy/Z9s7sM13OGqCvN9He/2fnhXdHzQoWXLaaXnfsW3Xlhwaqeo6otBVFYrf3GDH650ahA1tHgsE1Q43qZA3/7Qbowx5MaoFhVIE7x2ujhdH+XHQJRUTmG8c37qn2a0cSObtOEUjdSaXeHhoq/FmAWldM/GVaAhXL4Ik+kVqtBfKH9bEiKk4K46r8H6lC3hJyAPKStCdBtIb30JCmpIZ5GCqFaWAd2UqeE8ZAye7Z91nMyqeqTkksj6ZmpSguXS1NlgkkH+rpNOsGZQ39ZVSlD1eyq7/wTSaD4XJc/+JwBdOs2iqexhFCLAO4aqHphFF8z+GkOk=
 
     install:
     - mvn install
 
     script:
-    - sonar-scanner
-    - mvn clean verify
+    - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent package sonar:sonar
 
 notifications:
   email:
