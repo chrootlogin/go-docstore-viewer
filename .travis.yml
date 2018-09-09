@@ -19,6 +19,7 @@ jobs:
 
     install:
     - curl https://dl.bintray.com/rootlogin/go-docstore/master/:go-docstore --output /tmp/go-docstore
+    - chmod +x /tmp/go-docstore
     - mvn install
 
     script:
