@@ -23,6 +23,8 @@ jobs:
 
     before_script:
     - |
+      export SESSION_KEY=not-a-safe-key
+      export DB_PATH=/tmp/data.db
       $HOME/go-docstore &
       GO_DOCSTORE_PID=$!
 
