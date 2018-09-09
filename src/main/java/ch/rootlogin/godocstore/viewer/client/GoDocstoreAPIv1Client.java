@@ -31,7 +31,7 @@ public class GoDocstoreAPIv1Client {
         login();
     }
 
-    public void login() throws LoginException {
+    private void login() throws LoginException {
         try {
             var loginJson = new JSONObject();
             loginJson.put("username", this.username);
@@ -46,7 +46,7 @@ public class GoDocstoreAPIv1Client {
                 var token = req.getBody().getObject().getString("token");
 
                 // parse date
-                var dateTime = LocalDateTime.parse(expire, DateTimeFormatter.ISO_LOCAL_DATE_TIME);
+                var dateTime = LocalDateTime.parse(expire, DateTimeFormatter.ISO_DATE_TIME);
 
                 authToken = new AuthToken(token, dateTime);
 
