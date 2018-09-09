@@ -17,9 +17,11 @@ jobs:
         token:
           secure: ytU3nQd7/LmB8K0SrJ6JmnB4k9d6rIy4UUr7Qc6S+dHK9a8thEKp5YbSbijBglH1LFfyFckm9KIeGhLisvqDur2TWo8jEMAmWTjdN/KiDAoZIBmvTpW3hTnkk7g9+kYwb5QL27Qbccl4XUgjhUaoOtTqOijGf3SGf737zdazOQUN8UFC/aiyUVicPLlsBpbROH0bzXc+GA0Ygmkfcd2etyU1+w9gRHLUQlcKiMcIbOHKkHnaHr0uNCoNCG3gCff4fcAHY5BFZr+jF/YN2oTLBRa9o4zyN3/K/5jQUASQo8FRnyeH0EqS+bLrYJqbb4NBeYb//FlRQHTspNyBBRHUaxssDOpJM6oeK/qI8sy/Z9s7sM13OGqCvN9He/2fnhXdHzQoWXLaaXnfsW3Xlhwaqeo6otBVFYrf3GDH650ahA1tHgsE1Q43qZA3/7Qbowx5MaoFhVIE7x2ujhdH+XHQJRUTmG8c37qn2a0cSObtOEUjdSaXeHhoq/FmAWldM/GVaAhXL4Ik+kVqtBfKH9bEiKk4K46r8H6lC3hJyAPKStCdBtIb30JCmpIZ5GCqFaWAd2UqeE8ZAye7Z91nMyqeqTkksj6ZmpSguXS1NlgkkH+rpNOsGZQ39ZVSlD1eyq7/wTSaD4XJc/+JwBdOs2iqexhFCLAO4aqHphFF8z+GkOk=
 
-    install:
+    before_install:
     - curl https://dl.bintray.com/rootlogin/go-docstore/master/:go-docstore --output /tmp/go-docstore
     - chmod +x /tmp/go-docstore
+
+    install:
     - mvn install
 
     before_script:
