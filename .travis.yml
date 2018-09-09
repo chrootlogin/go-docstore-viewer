@@ -22,11 +22,15 @@ jobs:
     - chmod +x /tmp/go-docstore
     - mvn install
 
-    script:
+    before_script:
     - |
       /tmp/go-docstore &
       GO_DOCSTORE_PID=$!
+
+    script:
     - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent package sonar:sonar
+
+    after_script:
     - kill -9 $GO_DOCSTORE_PID
 
 notifications:
