@@ -1,0 +1,15 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Main" type="Application" factoryName="Application" singleton="true" nameIsGenerated="true">
+    <option name="MAIN_CLASS_NAME" value="ch.rootlogin.godocstore.viewer.Main" />
+    <module name="viewer" />
+    <extension name="coverage">
+      <pattern>
+        <option name="PATTERN" value="ch.rootlogin.godocstore.viewer.*" />
+        <option name="ENABLED" value="true" />
+      </pattern>
+    </extension>
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

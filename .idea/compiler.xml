@@ -28,7 +28,7 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="Go-Docstore-Viewer" options="--add-modules=javafx.graphics,javafx.fxml,javafx.base" />
-      <module name="viewer" options="" />
+      <module name="viewer" options="--add-modules=javafx.graphics --add-modules=javafx.fxml" />
     </option>
   </component>
 </project>
