@@ -1,4 +1,6 @@
-package ch.rootlogin.godocstore.viewer.models;
+package ch.rootlogin.godocstore.viewer.database.models;
+
+import ch.rootlogin.godocstore.viewer.models.ServerConnection;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

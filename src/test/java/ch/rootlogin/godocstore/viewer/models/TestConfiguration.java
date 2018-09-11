@@ -1,5 +1,6 @@
 package ch.rootlogin.godocstore.viewer.models;
 
+import ch.rootlogin.godocstore.viewer.database.models.Configuration;
 import org.junit.Assert;
 import org.junit.Test;
 

@@ -1,7 +1,6 @@
 package ch.rootlogin.godocstore.viewer.database;
 
-import ch.rootlogin.godocstore.viewer.GUI;
-import ch.rootlogin.godocstore.viewer.models.Configuration;
+import ch.rootlogin.godocstore.viewer.database.models.Configuration;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

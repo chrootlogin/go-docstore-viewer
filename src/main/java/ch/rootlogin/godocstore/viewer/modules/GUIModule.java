@@ -1,7 +1,6 @@
 package ch.rootlogin.godocstore.viewer.modules;
 
 import ch.rootlogin.godocstore.viewer.database.Database;
-import ch.rootlogin.godocstore.viewer.models.Configuration;
 import com.google.inject.AbstractModule;
 
 public class GUIModule extends AbstractModule {
