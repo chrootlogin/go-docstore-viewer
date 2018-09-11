@@ -1,9 +1,11 @@
 package ch.rootlogin.godocstore.viewer;
 
+import ch.rootlogin.godocstore.viewer.database.Database;
 import ch.rootlogin.godocstore.viewer.factories.ResourceURLStreamHandlerFactory;
 import ch.rootlogin.godocstore.viewer.modules.GUIModule;
 import com.google.inject.Guice;
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -20,14 +22,16 @@ public class GUI extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
+        var db = Database.INSTANCE;
+
         try {
-            var injector = Guice.createInjector(new GUIModule());
+            var injector = Guice.createInjector(new GUIModule(
+                    db
+            ));
 
             var fxmlLoader = new FXMLLoader();
 
-            fxmlLoader.setControllerFactory(instantiatedClass -> {
-                return injector.getInstance(instantiatedClass);
-            });
+            fxmlLoader.setControllerFactory(injector::getInstance);
 
             var root = (Parent) fxmlLoader.load(Helper.getInputStream("/views/main.fxml"));
             primaryStage.setTitle("Go-Docstore Viewer");
@@ -38,13 +42,15 @@ public class GUI extends Application {
             primaryStage.setScene(scene);
 
             // Close app correctly.
-            /*primaryStage.setOnCloseRequest(we -> {
+            primaryStage.setOnCloseRequest(we -> {
+                // close database connection
+                db.closeConnection();
+
+                // exit stage
                 Platform.setImplicitExit(false);
-
                 primaryStage.close();
-
                 System.exit(0);
-            });*/
+            });
 
             primaryStage.show();
         } catch(IOException e) {
