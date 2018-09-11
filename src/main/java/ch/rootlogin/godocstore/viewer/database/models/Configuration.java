@@ -14,16 +14,33 @@ public class Configuration {
     }
 
     public void addServerConnection(ServerConnection serverConnection) {
-        String sql = "INSERT INTO server_connections (url,username,password) VALUES (?,?,?)";
+        var sql = "INSERT INTO server_connections (url,username,password) VALUES (?,?,?)";
 
-        try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
-            pstmt.setString(1, serverConnection.getUrl());
-            pstmt.setString(2, serverConnection.getUsername());
-            pstmt.setString(2, serverConnection.getPassword());
+        try (var stmt = conn.prepareStatement(sql)) {
+            stmt.setString(1, serverConnection.getUrl());
+            stmt.setString(2, serverConnection.getUsername());
+            stmt.setString(3, serverConnection.getPassword());
 
-            pstmt.executeUpdate();
+            stmt.executeUpdate();
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
+    }
+
+    public String get(String key) {
+        var sql = "SELECT cvalue FROM config WHERE ckey = ?";
+
+        try (var stmt = conn.prepareStatement(sql)) {
+            stmt.setString(1, key);
+
+            var rs = stmt.executeQuery();
+            if(rs.next()) {
+                return rs.getString(1);
+            }
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+
+        return null;
     }
 }

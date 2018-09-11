@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Text?>
+
+<?import javafx.scene.control.Label?>
+<GridPane alignment="TOP_CENTER" prefWidth="300" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.rootlogin.godocstore.viewer.controllers.AddServerController">
+   <children>
+       <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="title" text="Add go-docstore server" GridPane.columnSpan="2" />
+       <Label text="URL" GridPane.rowIndex="1" />
+       <TextField fx:id="url" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+       <Label wrapText="true" text="Example: http://api.docstore.com/ or https://api.docstore.com/" GridPane.rowIndex="2" GridPane.columnSpan="2" />
+       <Label text="Username" GridPane.rowIndex="3" />
+       <TextField fx:id="username" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+       <Label text="Password" GridPane.rowIndex="4" />
+       <TextField fx:id="password" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+   </children>
+   <columnConstraints>
+      <ColumnConstraints />
+       <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+       <RowConstraints />
+   </rowConstraints>
+</GridPane>
