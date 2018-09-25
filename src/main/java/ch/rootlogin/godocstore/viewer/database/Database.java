@@ -3,7 +3,10 @@ package ch.rootlogin.godocstore.viewer.database;
 import ch.rootlogin.godocstore.viewer.Helper;
 import ch.rootlogin.godocstore.viewer.database.models.Configuration;
 
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -43,7 +46,7 @@ public class Database {
         try {
             // db parameters
             String url = "jdbc:sqlite:data.db";
-            // create a connection to the database
+            // create a connection to the ch.rootlogin.godocstore.viewer.database
             conn = DriverManager.getConnection(url);
             logger.log(Level.INFO, "Connection to SQLite has been established.");
         } catch (SQLException ex) {

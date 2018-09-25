@@ -4,7 +4,7 @@
     <module name="viewer" />
     <extension name="coverage">
       <pattern>
-        <option name="PATTERN" value="ch.rootlogin.godocstore.viewer.gui.preloader.*" />
+        <option name="PATTERN" value="viewer.gui.preloader.*" />
         <option name="ENABLED" value="true" />
       </pattern>
     </extension>

@@ -1,7 +1,7 @@
 jobs:
   include:
   - language: java
-    jdk: oraclejdk10
+    jdk: openjdk11
 
     git:
       depth: false

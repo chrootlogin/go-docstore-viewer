@@ -18,6 +18,7 @@ public class ResourceURLStreamHandlerFactory implements URLStreamHandlerFactory 
             throw new FileNotFoundException();
         }
     };
+
     @Override public URLStreamHandler createURLStreamHandler(String protocol) {
         if ("internal".equals(protocol)) {
             return streamHandler;

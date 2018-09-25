@@ -7,7 +7,7 @@
 <?import javafx.scene.text.Text?>
 
 <?import javafx.scene.control.Label?>
-<GridPane alignment="TOP_CENTER" prefWidth="300" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.rootlogin.godocstore.viewer.controllers.AddServerController">
+<GridPane alignment="TOP_CENTER" prefWidth="300" GridPane.hgrow="ALWAYS" GridPane.vgrow="ALWAYS" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.rootlogin.godocstore.viewer.gui.controllers.AddServerController">
    <children>
        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="title" text="Add go-docstore server" GridPane.columnSpan="2" />
        <Label text="URL" GridPane.rowIndex="1" />

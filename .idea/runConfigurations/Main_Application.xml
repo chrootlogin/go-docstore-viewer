@@ -1,10 +1,11 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="Main Application" type="Application" factoryName="Application" singleton="true">
-    <option name="MAIN_CLASS_NAME" value="ch.rootlogin.godocstore.viewer.Main" />
+    <option name="MAIN_CLASS_NAME" value="ch.rootlogin.godocstore.viewer.MainApplication" />
     <module name="viewer" />
+    <option name="VM_PARAMETERS" value="--add-opens java.base/java.lang=com.google.guice" />
     <extension name="coverage">
       <pattern>
-        <option name="PATTERN" value="ch.rootlogin.godocstore.viewer.*" />
+        <option name="PATTERN" value="viewer.*" />
         <option name="ENABLED" value="true" />
       </pattern>
     </extension>

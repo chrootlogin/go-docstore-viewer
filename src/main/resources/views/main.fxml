@@ -10,7 +10,7 @@
 <GridPane alignment="CENTER"
           xmlns="http://javafx.com/javafx/10.0.2"
           xmlns:fx="http://javafx.com/fxml/1"
-          fx:controller="ch.rootlogin.godocstore.viewer.controllers.MainViewController"
+          fx:controller="ch.rootlogin.godocstore.viewer.gui.controllers.MainViewController"
           GridPane.hgrow="ALWAYS"
           GridPane.vgrow="ALWAYS"
           prefWidth="800">

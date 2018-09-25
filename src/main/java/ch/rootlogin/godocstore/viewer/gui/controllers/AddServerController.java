@@ -1,4 +1,4 @@
-package ch.rootlogin.godocstore.viewer.controllers;
+package ch.rootlogin.godocstore.viewer.gui.controllers;
 
 import ch.rootlogin.godocstore.viewer.database.Database;
 import com.google.inject.Inject;
